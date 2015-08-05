@@ -141,6 +141,9 @@ Both the board state and the players set of tiles determine the word composition
 word.squares = board.get_squares(as_much_as: word.length, starting_at: "A1", orientation: VERTICAL)
 # => [<Square A1>, <Square A2>, <Square A3>, <Square A4>, <Square A5>]
 
+word.composition
+# => { "A" => <Square A1>, "P" => <Square A2>, "P" => <Square A3>, "L" => <Square A4>, "E" => <Square A5> }
+
 # From the word point of view:
 #
 #      1 2 3 4 5 .
@@ -178,3 +181,16 @@ word.squares = board.get_squares(as_much_as: word.length, starting_at: "A1", ori
 #  . | |> words can be created in the orthogonal direction from any involved square
 #
 ```
+
+### Scrabble validates the word composability
+
+The word besides being valid must fit the board status. Because players have no interest in attempting to place tiles on occupied squares, let spare them the burden of having to explicitely place the tiles one by one.
+
+```ruby
+word.fits?(board)
+# => true
+```
+
+### Scrabble writes down the word on the board
+
+I'm not sure which object should be responsible for this action, I'll write some code and see if the design starts shaping up.
