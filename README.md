@@ -107,12 +107,74 @@ Storyline
 Alternative validations workflow
 --------------------------------
 
+### Player submits a word
+
 Player submits a **word**: e.g. word: "APPLE" starting from starting_square: "A1" with orientation: "vertically"
 
+```ruby
+word = Word.new("APPLE", starting_at: "A1", orientation: VERTICAL)
+# => <Word "APPLE", "A1", VERTICAL>
 ```
-Word.new("APPLE", starting_at: "A1", orientation: VERTICAL)
+
+That word could be stored by the player, and later hold its own value (score).
+
+### Scrabble validates the word
+
+```ruby
+word.exists? # may depend on the language (game setting)
+# => true
+
+  # Word delegates the validation to a dictionnary
 ```
 
-Board.validate(word)
+If the board does not exist, the move is aborted and the player must create another word or pass.
 
+#### Keep in mind
 
+In some conditions, the player won't be able to submit a valid word and must be allowed to pass.
+
+### Scrabble computes the word composition
+
+Both the board state and the players set of tiles determine the word composition (which tiles ashould be places in which places to compose the word on the board).
+
+```ruby
+word.squares = board.get_squares(as_much_as: word.length, starting_at: "A1", orientation: VERTICAL)
+# => [<Square A1>, <Square A2>, <Square A3>, <Square A4>, <Square A5>]
+
+# From the word point of view:
+#
+#      1 2 3 4 5 .
+#     ------------
+#  A | A P P L E     -> involved squares: A1 A2 A3 A4 A5
+#  B |
+#  C |
+#  . |
+#
+
+# From the board point of view:
+#
+#      1 2 3 4 5 .
+#     ------------
+#  A |   P           -> involved tiles from the player set: A P L E
+#  B |
+#  C |
+#  . |
+#
+```
+
+#### Keep in mind (use cases)
+
+```ruby
+
+# From the board point of view:
+#
+#      1 2 3 4 5 .
+#     ------------
+#  A |   P
+#  B | R
+#  C | I
+#  D | S
+#  E | E
+#  . | |> words can be created in the orthogonal direction from any involved square
+#
+```
