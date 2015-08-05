@@ -35,6 +35,13 @@ and the second player plays
 Basic objects
 -------------
 
+### Word (duh!)
+
+- delegates its valdiation to a dictionnary
+- holds its own position
+- can be "writen down" on the table once the validations were performed
+- holds a list of squares (determined from the starting position and orientation)
+
 ### Dictionary
 
 - receives a word and checks if it exists
@@ -74,7 +81,6 @@ Basic objects
   board.validate_position([current_square, the past_square, and the previous one])
   square.is_available?
 
-
 Storyline
 ---------
 
@@ -101,5 +107,12 @@ Storyline
 Alternative validations workflow
 --------------------------------
 
-Player submits a word: e.g. word: "AP.LE" starting from starting_square: "A1" "vertically"
+Player submits a **word**: e.g. word: "APPLE" starting from starting_square: "A1" with orientation: "vertically"
+
+```
+Word.new("APPLE", starting_at: "A1", orientation: VERTICAL)
+```
+
 Board.validate(word)
+
+
