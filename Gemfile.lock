@@ -1,0 +1,17 @@
+PATH
+  remote: .
+  specs:
+    scrabble (0.1.0)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  scrabble!
+
+BUNDLED WITH
+   1.10.6
