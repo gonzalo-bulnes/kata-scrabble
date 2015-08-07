@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.files = Dir["{lib}/**/*", "Gemfile", "LICENSE", "Rakefile", "README.md"]
   gem.test_files = Dir["spec/**/*"]
 
+  gem.add_development_dependency 'inch', '~> 0.6.0'
   gem.add_development_dependency 'rake', '~> 10.0'
   gem.add_development_dependency 'rspec', '~> 3.0'
 end
