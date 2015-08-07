@@ -13,7 +13,10 @@ Gem::Specification.new do |gem|
   gem.homepage      = "https://github.com/gonzalo-bulnes/kata-scrabble"
   gem.license       = "GPL-3.0"
 
-  gem.files = Dir["{lib}/**/*", "Gemfile", "LICENSE", "README.md"]
+  gem.files = Dir["{lib}/**/*", "Gemfile", "LICENSE", "Rakefile", "README.md"]
   gem.test_files = Dir["spec/**/*"]
+
+  gem.add_development_dependency 'rake', '~> 10.0'
+  gem.add_development_dependency 'rspec', '~> 3.0'
 end
 
