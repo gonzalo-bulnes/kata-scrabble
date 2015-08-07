@@ -1,6 +1,10 @@
 Scrabble Kata
 =============
 
+[![Build Status](https://travis-ci.org/gonzalo-bulnes/kata-scrabble.svg?branch=master)](https://travis-ci.org/gonzalo-bulnes/kata-scrabble)
+[![Code Climate](https://codeclimate.com/github/gonzalo-bulnes/kata-scrabble.svg)](https://codeclimate.com/github/gonzalo-bulnes/kata-scrabble)
+[![Inline docs](http://inch-ci.org/github/gonzalo-bulnes/kata-scrabble.svg?branch=master)](http://inch-ci.org/github/gonzalo-bulnes/kata-scrabble)
+
 A board game in which players create words from sets of letters.
 
 Development
