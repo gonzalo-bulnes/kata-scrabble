@@ -207,3 +207,23 @@ word.fits?(board)
 ### Scrabble writes down the word on the board
 
 I'm not sure which object should be responsible for this action, I'll write some code and see if the design starts shaping up.
+
+User interface
+--------------
+
+Being able to see the board is required in order to play. It could be drawn using [box-drawing characters][box] from the Unicode set. (See also the [mathematical operators][math] and the [supercripts and subscripts][sup] blocks.)
+
+  [box]: https://en.wikipedia.org/wiki/Box-drawing_character
+  [math]: https://en.wikipedia.org/wiki/Mathematical_Operators
+  [sup]: https://en.wikipedia.org/wiki/Superscripts_and_Subscripts
+
+```bash
+# Text-only board sample:
+
+┌───┬───┬─┅─┬───┬───┬─
+│ A₃│ P₀┇ Pₖ┇ L₊│ ⋆
+├───┼───┼─┅─┼───┼──
+
+# Colors can be added to highlight the bonus squares.
+```
+
