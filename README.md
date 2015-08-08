@@ -7,6 +7,28 @@ Scrabble Kata
 
 A board game in which players create words from sets of letters.
 
+Installation
+------------
+
+Add the gem to your `Gemfile`:
+
+```ruby
+# Gemfile
+
+gem 'scrabble', '~> 0.1.0' # see semver.org
+```
+
+Usage
+-----
+
+```bash
+# Start a new game
+scrabble start
+
+# Read usage instructions
+scrabble help
+```
+
 Development
 -----------
 
