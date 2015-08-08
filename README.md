@@ -37,6 +37,14 @@ Development
 rake
 ```
 
+About
+-----
+
+This kata aims at uncovering a model for the Scrabble game, by applying _Object-Oriented Design_ techniques.
+
+While doing so, I wrote down some thoughts and comments in this [whiteboarding branch](https://github.com/gonzalo-bulnes/kata-scrabble/tree/spike-whiteboarding).
+
+
 License
 -------
 
