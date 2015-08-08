@@ -94,6 +94,8 @@ Basic objects
 
   [rescue]: https://github.com/gonzalo-bulnes/kata-images_gallery_generator/blob/v1.0.1/lib/images_gallery/cli.rb#L10-L19
 
+**Note**: the board and squares drawing may be their own responsibilty in a first time at least, then eventually move to some sort of front-end classes.
+
 Storyline
 ---------
 
