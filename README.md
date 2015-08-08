@@ -81,6 +81,19 @@ Basic objects
   board.validate_position([current_square, the past_square, and the previous one])
   square.is_available?
 
+### Game
+
+- provides means to play (start a game, resume a game...)
+- may require a state machine to keep the gameplay coherent (e.g. ask for a new input after a player submitted an invalid word.)
+
+### CLI
+
+- responsible for the user messages
+- yet may delegate the most core-related output to the Game (e.g. drawing the board?)
+- triggering messages by [rescuing errors][rescue] feels right
+
+  [rescue]: https://github.com/gonzalo-bulnes/kata-images_gallery_generator/blob/v1.0.1/lib/images_gallery/cli.rb#L10-L19
+
 Storyline
 ---------
 
