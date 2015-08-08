@@ -44,6 +44,10 @@ This kata aims at uncovering a model for the Scrabble game, by applying _Object-
 
 While doing so, I wrote down some thoughts and comments in this [whiteboarding branch](https://github.com/gonzalo-bulnes/kata-scrabble/tree/spike-whiteboarding).
 
+Credits
+-------
+
+> **DISCLAIMER**: The name SCRABBLE® is a [registered trademark](http://www.scrabble.com/), and so may be some graphical elements of the board and tiles. This gem is not related in any way with the trademark owners, and only makes use of the name and the original board game graphical elements with a fair-use intention.
 
 License
 -------
