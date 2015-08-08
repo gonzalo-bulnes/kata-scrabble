@@ -225,5 +225,6 @@ Being able to see the board is required in order to play. It could be drawn usin
 ├───┼───┼─┅─┼───┼──
 
 # Colors can be added to highlight the bonus squares.
+echo -e "┌───┬───┬─\e[38;5;205m┅\e[0m─┬───┬───┬─"; echo -e "│ A₃│ P₀┇ Pₖ┇ L₊│ \e[38;5;205m⋆\e[0m "; echo "├───┼───┼─┅─┼───┼──"
 ```
 
