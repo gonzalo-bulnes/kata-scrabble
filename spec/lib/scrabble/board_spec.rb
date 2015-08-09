@@ -12,21 +12,21 @@ module Scrabble
       it 'returns a text representation of the board' do
         expect(board.to_s).to eq <<-BOARD
     A B C D E F G H I J K L M N O 
-  1                               
-  2                               
-  3                               
-  4                               
-  5                               
-  6                               
-  7                               
-  8                               
-  9                               
- 10                               
- 11                               
- 12                               
- 13                               
- 14                               
- 15                               
+  1 3!    2       3!      2     3!
+  2   2!      3       3       2!  
+  3     2!      2   2       2!    
+  4 2     2!      2       2!    2 
+  5         2!          2!        
+  6   3       3       3       3   
+  7     2       2   2       2     
+  8 3!    2       ⋆       2     3!
+  9     2       2   2       2     
+ 10   3       3       3       3   
+ 11         2!          2!        
+ 12 2     2!      2       2!    2 
+ 13     2!      2   2       2!    
+ 14   2!      3       3       2!  
+ 15 3!    2       3!      2     3!
         BOARD
       end
     end
