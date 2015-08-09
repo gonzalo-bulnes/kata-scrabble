@@ -1,6 +1,15 @@
 require 'rspec/core/rake_task'
 
-RSpec::Core::RakeTask.new(:spec)
+namespace :spec do
+
+  RSpec::Core::RakeTask.new(:public) do |config|
+    config.rspec_opts = '--tag ~private --tag ~protected'
+  end
+
+  RSpec::Core::RakeTask.new(:development) do |config|
+    config.rspec_opts = '--tag private --tag protected'
+  end
+end
 
 RSpec::Core::RakeTask.new(:features) do |config|
   config.pattern = 'spec/features/**/*_spec.rb'
@@ -20,5 +29,5 @@ rescue LoadError
   end
 end
 
-task default: [:spec, :inch]
+task default: ['spec:public', 'spec:development', :inch]
 
