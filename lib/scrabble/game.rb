@@ -11,8 +11,15 @@ module Scrabble
     end
 
     def run
-      error.puts 'Hello!'
+      error.puts board.to_s
     end
+
+    private
+
+      def board
+        @board ||= Board.new
+      end
+
   end
 end
 

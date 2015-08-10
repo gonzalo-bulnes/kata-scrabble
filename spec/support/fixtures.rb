@@ -1,0 +1,2 @@
+require './spec/fixtures/boards'
+
