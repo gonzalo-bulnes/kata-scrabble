@@ -12,8 +12,8 @@ module Scrabble
 
     describe '#run' do
 
-      it 'outputs "Hello!"' do
-        expect(error).to receive(:puts).with('Hello!')
+      it 'outputs a welcome board' do
+        expect(error).to receive(:puts).with(Fixtures::EMPTY_BOARD)
         game.run
       end
     end
