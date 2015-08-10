@@ -49,14 +49,17 @@ Basic objects
 ### Board
 
 - the current game status (from the tiles point of view)
-- validating the words position
-- (*) providing hints about the score modifiers (3x word, 2x word, 3x letter, 2x letter)
-
-* current game status: set of squares (ordered)
+  * [DONE] current game status: set of squares (ordered)
+- validates the words position
+- [DONE] (*) provides hints about the score modifiers (3x word, 2x word, 3x letter, 2x letter)
 
 ### Square
 
-- empty, (tenative), occupied -> put_tile(Tile tile)
+- hold the board state (i.e. eventually hold a tile)
+- [DONE] hold information about the score modifiers (some positions modify the letters, owrd values)
+- <s>state machine: empty, (tenative), occupied -> put_tile(Tile tile)</s>
+  * no state machine is necessary: the Word instances hold the tentative word during validations
+  * once validated, the tiles which compose the word can be placed on their respective squares
 - modifies the tiles or word scores (immutable)
 
 ### Whiteboard
