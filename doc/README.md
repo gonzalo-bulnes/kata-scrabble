@@ -53,6 +53,7 @@ Data definitions
 #### `Player`
 
 - name
+- list of **tiles**
 
 #### `Tile`
 

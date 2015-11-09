@@ -10,6 +10,10 @@ module Scrabble
     def to_s
       name.to_s
     end
+
+    def tiles
+      @tiles ||= []
+    end
   end
 end
 
