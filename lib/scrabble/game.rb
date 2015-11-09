@@ -17,6 +17,12 @@ module Scrabble
 
     def run
       error.puts board.to_s
+
+      players.each do |player|
+        7.times do
+          player.pick_tile!(remaining_tiles)
+        end
+      end
     end
 
     private
@@ -28,7 +34,7 @@ module Scrabble
 
       # Returns an Array of Players
       def players
-        @players ||= [Player.new('Alice')]
+        @players ||= [Player.new('Alice'), Player.new('Bob'), Player.new('Charles'), Player.new('Dani')]
       end
 
       # Returns a Player

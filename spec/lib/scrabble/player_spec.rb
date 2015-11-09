@@ -21,5 +21,19 @@ module Scrabble
         expect(player.send(:tiles)).to be_kind_of Array
       end
     end
+
+    describe '#pick_tile!' do
+
+      it "move a tile from a tiles bag to the player's rack" do
+        tile_A = Tile.new(:A, 1)
+        tile_B = Tile.new(:B, 3)
+        tile_G = Tile.new(:G, 2)
+        bag = [tile_A, tile_B, tile_G]
+        expect(player.tiles).to be_empty
+        expect(player.pick_tile!(bag))
+        expect(player.tiles).to include(tile_A)
+        expect(bag).not_to include(tile_A)
+      end
+    end
   end
 end

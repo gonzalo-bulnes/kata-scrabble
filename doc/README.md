@@ -75,3 +75,8 @@ Data definitions
 #### Entrypoint: `CLI`
 
 _To be defined._
+
+Functions signature and documentation
+-------------------------------------
+
+I don't think it makes sense here to keep data inmutable. I'll take care, however, to keep data mutation inside of the objects boundaries (does that make sense?).
