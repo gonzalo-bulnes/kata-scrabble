@@ -3,11 +3,13 @@ require 'scrabble/squares/triple_letter_score_square'
 require 'scrabble/squares/double_word_score_square'
 require 'scrabble/squares/triple_word_score_square'
 require 'scrabble/squares/star_square'
+require 'scrabble/tile'
 
 module Scrabble
   class Square
 
     attr_reader :column, :line
+    attr_writer :tile
 
     def initialize(column_name, line_name)
       @column = column_name
@@ -36,6 +38,14 @@ module Scrabble
 
     def star!
       promote_to!(Squares::StarSquare)
+    end
+
+    def tile
+      @tile ||= nil
+    end
+
+    def empty?
+      tile.nil?
     end
 
     private

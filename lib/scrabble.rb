@@ -1,4 +1,3 @@
-require 'scrabble/board'
 require 'scrabble/configuration'
 require 'scrabble/game'
 require 'scrabble/version'

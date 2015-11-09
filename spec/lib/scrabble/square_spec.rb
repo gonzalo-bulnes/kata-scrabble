@@ -78,6 +78,24 @@ module Scrabble
         expect(square.line).to eq 1
       end
     end
+
+    describe '#tile' do
+
+      it 'returns nil' do
+        expect(square.tile).to be_nil
+      end
+
+      context 'when there is a tile on the square' do
+
+        before(:each) do
+          square.tile = Tile.new(:F, 4)
+        end
+
+        it 'returns a tile' do
+          expect(square.tile).to be_kind_of Tile
+        end
+      end
+    end
   end
 end
 

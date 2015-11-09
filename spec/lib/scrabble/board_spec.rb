@@ -27,6 +27,15 @@ module Scrabble
         expect(squares_line).to eq 12
       end
     end
+
+    describe '#squares', private: true do
+
+      it 'returns an Array of Squares' do
+        expect(board.send(:squares)).to be_kind_of Array
+        expect(board.send(:squares)).not_to be_empty
+        expect(board.send(:squares)[0]).to be_kind_of Square
+      end
+    end
   end
 end
 

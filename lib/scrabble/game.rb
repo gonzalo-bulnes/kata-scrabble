@@ -1,3 +1,8 @@
+require 'scrabble/board'
+require 'scrabble/player'
+require 'scrabble/rule'
+require 'scrabble/tile'
+
 module Scrabble
   class Game
 
@@ -16,10 +21,35 @@ module Scrabble
 
     private
 
+      # Returns a Board
       def board
         @board ||= Board.new
       end
 
+      # Returns an Array of Players
+      def players
+        @players ||= [Player.new('Alice')]
+      end
+
+      # Returns a Player
+      def current_player
+        players[0]
+      end
+
+      # Returns an Array of Rules
+      def rules
+        @rules ||= [Rule.new('Tiles cannot be placed out of the board.')]
+      end
+
+      # Returns a Player
+      def current_player
+        players[0]
+      end
+
+      # Returns an Array of Tiles
+      def remaining_tiles
+        @remaining_tiles ||= [Tile.new(:A, 1)]
+      end
   end
 end
 
