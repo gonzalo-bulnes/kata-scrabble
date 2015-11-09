@@ -32,3 +32,45 @@ Anytime, the game state should provide enough information to resume the game.
 1. Functional examples and specifications
 1. Functions templates (methods templates)
 1. Functions definitions (methods definitions)
+
+Data definitions
+----------------
+
+### State of the game
+
+#### Main data structure: `Game`
+
+- current **board**
+- ordered list of **players**
+- current **player**
+- list of the remaining **tiles**
+- set of **rules**
+
+#### `Board`
+
+- list of **squares**
+
+#### `Player`
+
+- name
+
+#### `Tile`
+
+- name (e.g. `:A`, `:P`, `:blank`)
+- value in points
+
+#### `Rule`
+
+- should be actionnable
+- error message (describes the rule when it has been broken)
+
+#### `Square`
+
+- line_name
+- column_name
+
+### User interface
+
+#### Entrypoint: `CLI`
+
+_To be defined._
