@@ -24,6 +24,12 @@ module Scrabble
     def pick_tile!(remaining_tiles)
       tiles << remaining_tiles.shift
     end
+
+    def play(game)
+      puts "#{name} plays"
+      game.pass!
+      game.done
+    end
   end
 end
 

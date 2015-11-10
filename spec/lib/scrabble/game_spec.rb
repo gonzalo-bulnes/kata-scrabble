@@ -10,12 +10,23 @@ module Scrabble
 
     it { expect(game).to respond_to :run }
     it { expect(game).to respond_to :initialize_players_racks! }
+    it { expect(game).to respond_to :ended? }
+    it { expect(game).to respond_to :pass! }
+    it { expect(game).to respond_to :turn }
 
     describe '#run' do
 
       it 'outputs a welcome board' do
         expect(error).to receive(:puts).with(Fixtures::EMPTY_BOARD)
         game.run
+      end
+
+      context 'and there are 3 players' do
+
+        context 'when all players only pass' do
+
+          it 'returns after 6 turns'
+        end
       end
     end
 
@@ -67,6 +78,36 @@ module Scrabble
         expect(game.send(:remaining_tiles)).to be_kind_of Array
         expect(game.send(:remaining_tiles)).not_to be_empty
         expect(game.send(:remaining_tiles)[0]).to be_kind_of Tile
+      end
+    end
+
+    describe '#pass', private: true do
+
+      it 'increments the pass counter' do
+        expect{ game.pass! }.to change{ game.pass_count }.from(0).to(1)
+      end
+    end
+
+    describe '#ended?', private: true do
+
+      context 'when the pass count if twice the number of players' do
+
+        it 'returns true' do
+          allow(game).to receive(:players_count).and_return(2)
+
+          allow(game).to receive(:pass_count).and_return(4)
+          expect(game.ended?).to be true
+
+          allow(game).to receive(:pass_count).and_return(5)
+          expect(game.ended?).to be true
+        end
+      end
+
+      it 'returns false' do
+        allow(game).to receive(:players_count).and_return(2)
+
+        allow(game).to receive(:pass_count).and_return(3)
+        expect(game.ended?).to be false
       end
     end
   end

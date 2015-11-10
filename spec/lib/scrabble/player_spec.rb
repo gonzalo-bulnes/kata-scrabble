@@ -7,6 +7,7 @@ module Scrabble
 
     it { expect(player).to respond_to :name }
     it { expect(player).to respond_to :tiles }
+    it { expect(player).to respond_to :play }
 
     describe '#name' do
 
