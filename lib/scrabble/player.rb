@@ -16,7 +16,11 @@ module Scrabble
       @tiles ||= []
     end
 
-    # Moves a tile form the bag to the player's rack
+    # Moves a tile form a tiles bag to the player's rack
+    #
+    # Shuffling the bag is recommended.
+    #
+    # Retunrs nothing.
     def pick_tile!(remaining_tiles)
       tiles << remaining_tiles.shift
     end

@@ -28,6 +28,42 @@ module Scrabble
                                   [:A, 15], [:H, 15], [:O, 15] ]
     STAR_SQUARE = [:H, 8]
 
+    DEFAULT_TILES_WITH_COUNT = [ { name: :A, value: 1, count: 9 },
+                                 { name: :B, value: 3, count: 2 },
+                                 { name: :C, value: 3, count: 2 },
+                                 { name: :D, value: 2, count: 4 },
+                                 { name: :E, value: 1, count: 12 },
+                                 { name: :F, value: 4, count: 2 },
+                                 { name: :G, value: 2, count: 3 },
+                                 { name: :H, value: 4, count: 2 },
+                                 { name: :I, value: 1, count: 9 },
+                                 { name: :J, value: 8, count: 1 },
+                                 { name: :K, value: 5, count: 1 },
+                                 { name: :L, value: 1, count: 4 },
+                                 { name: :M, value: 3, count: 2 },
+                                 { name: :N, value: 1, count: 6 },
+                                 { name: :O, value: 1, count: 8 },
+                                 { name: :P, value: 3, count: 2 },
+                                 { name: :Q, value: 10, count: 1 },
+                                 { name: :R, value: 1, count: 6 },
+                                 { name: :S, value: 1, count: 4 },
+                                 { name: :T, value: 1, count: 6 },
+                                 { name: :U, value: 1, count: 4 },
+                                 { name: :V, value: 4, count: 2 },
+                                 { name: :W, value: 4, count: 2 },
+                                 { name: :X, value: 8, count: 1 },
+                                 { name: :Y, value: 4, count: 2 },
+                                 { name: :Z, value: 10, count: 1 },
+                                 { name: :blank, value: 0, count: 2 } ]
+
+    def self.default_tiles
+      DEFAULT_TILES_WITH_COUNT.inject([]) do |bag, tile|
+        tile[:count].times do
+          bag << Tile.new(tile[:name], tile[:value])
+        end
+        bag
+      end
+    end
   end
 end
 

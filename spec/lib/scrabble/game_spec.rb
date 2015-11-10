@@ -9,12 +9,23 @@ module Scrabble
     let(:game) { Game.new(error, input, out) }
 
     it { expect(game).to respond_to :run }
+    it { expect(game).to respond_to :initialize_players_racks! }
 
     describe '#run' do
 
       it 'outputs a welcome board' do
         expect(error).to receive(:puts).with(Fixtures::EMPTY_BOARD)
         game.run
+      end
+    end
+
+    describe '#initialize_players_racks!' do
+
+      it 'provides each player with 7 tiles from the bag' do
+        game.initialize_players_racks!
+        game.send(:players).each do |player|
+          expect(player.tiles.count).to eq 7
+        end
       end
     end
 

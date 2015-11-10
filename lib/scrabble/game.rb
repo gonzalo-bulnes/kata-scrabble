@@ -18,9 +18,16 @@ module Scrabble
     def run
       error.puts board.to_s
 
+      initialize_players_racks!
+    end
+
+    # Provides each player with 7 tiles from the tiles bag
+    #
+    # Returns nothing.
+    def initialize_players_racks!
       players.each do |player|
         7.times do
-          player.pick_tile!(remaining_tiles)
+          player.pick_tile!(remaining_tiles.shuffle)
         end
       end
     end
@@ -54,7 +61,7 @@ module Scrabble
 
       # Returns an Array of Tiles
       def remaining_tiles
-        @remaining_tiles ||= [Tile.new(:A, 1)]
+        @remaining_tiles ||= Configuration.default_tiles
       end
   end
 end
