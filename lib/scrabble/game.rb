@@ -12,7 +12,7 @@ module Scrabble
     attr_reader :error, :input, :out
     private :error, :input, :out
 
-    def initialize(error, input, out)
+    def initialize(error=STDERR, input=STDIN, out=STDOUT)
       @error = error
       @input = input
       @out = out
