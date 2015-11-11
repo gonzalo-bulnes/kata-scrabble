@@ -1,3 +1,6 @@
+require 'scrabble/word'
+require 'scrabble/board/location'
+
 module Scrabble
   class Game
     module Moves
