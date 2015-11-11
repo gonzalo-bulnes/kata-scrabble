@@ -49,6 +49,11 @@ module Scrabble
       @pass_count += 1
     end
 
+    def swap_tile(tile)
+      bag << tile
+      bag.shuffle!.shift
+    end
+
     def done
       players.push players.shift
     end
