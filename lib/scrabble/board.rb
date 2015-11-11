@@ -1,4 +1,4 @@
-require 'scrabble/square'
+require 'scrabble/board/square'
 
 module Scrabble
   class Board

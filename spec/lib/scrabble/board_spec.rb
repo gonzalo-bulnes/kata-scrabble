@@ -23,7 +23,7 @@ module Scrabble
 
       it 'returns a line of squares' do
         expect(line_size).to eq board.send(:width)
-        expect(line_element).to be_kind_of Square
+        expect(line_element).to be_kind_of Board::Square
         expect(squares_line).to eq 12
       end
     end

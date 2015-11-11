@@ -20,7 +20,6 @@ module Scrabble
       end
     end
 
-
     describe '#pass' do
 
       it 'increments the successive_pass_count' do

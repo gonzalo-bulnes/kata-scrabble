@@ -1,5 +1,5 @@
 module Scrabble
-  module Squares
+  class Board
     module StarSquare
 
       def to_s

@@ -1,9 +1,9 @@
 require 'spec_helper'
 
 module Scrabble
-  describe Square do
+  describe Board::Square do
 
-    let(:square) { Square.new(:A, 1) }
+    let(:square) { Board::Square.new(:A, 1) }
 
     it { expect(square).to respond_to :to_s }
     it { expect(square).to respond_to :column }

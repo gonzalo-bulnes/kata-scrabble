@@ -1,10 +1,11 @@
-require 'scrabble/squares/double_letter_score_square'
-require 'scrabble/squares/triple_letter_score_square'
-require 'scrabble/squares/double_word_score_square'
-require 'scrabble/squares/triple_word_score_square'
-require 'scrabble/squares/star_square'
+require 'scrabble/board/double_letter_score_square'
+require 'scrabble/board/triple_letter_score_square'
+require 'scrabble/board/double_word_score_square'
+require 'scrabble/board/triple_word_score_square'
+require 'scrabble/board/star_square'
 
 module Scrabble
+  class Board
   class Square
 
     attr_reader :column, :line
@@ -19,23 +20,23 @@ module Scrabble
     end
 
     def double_letter_score!
-      promote_to!(Squares::DoubleLetterScoreSquare)
+      promote_to!(DoubleLetterScoreSquare)
     end
 
     def triple_letter_score!
-      promote_to!(Squares::TripleLetterScoreSquare)
+      promote_to!(TripleLetterScoreSquare)
     end
 
     def double_word_score!
-      promote_to!(Squares::DoubleWordScoreSquare)
+      promote_to!(DoubleWordScoreSquare)
     end
 
     def triple_word_score!
-      promote_to!(Squares::TripleWordScoreSquare)
+      promote_to!(TripleWordScoreSquare)
     end
 
     def star!
-      promote_to!(Squares::StarSquare)
+      promote_to!(StarSquare)
     end
 
     private
@@ -81,6 +82,7 @@ module Scrabble
           prepend type
         end
       end
+
+  end
   end
 end
-

@@ -1,5 +1,5 @@
 module Scrabble
-  module Squares
+  class Board
     module TripleLetterScoreSquare
 
       def to_s
