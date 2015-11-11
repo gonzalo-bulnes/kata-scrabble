@@ -1,11 +1,13 @@
 require 'scrabble/board'
 require 'scrabble/configuration'
+require 'scrabble/game/moves'
 require 'scrabble/player'
 require 'scrabble/rule'
 require 'scrabble/tile'
 
 module Scrabble
   class Game
+    include Moves
 
     attr_reader :error, :input, :out
     private :error, :input, :out
@@ -14,10 +16,18 @@ module Scrabble
       @error = error
       @input = input
       @out = out
+      @successive_pass_count = 0
     end
 
     def run
       error.puts board.to_s
+    end
+
+    # How many times in a row did players pass
+    #
+    # Returns a Fixnum
+    def successive_pass_count
+      @successive_pass_count
     end
 
     private
@@ -48,11 +58,12 @@ module Scrabble
       end
       alias :bag :remaining_tiles
 
-      # How many times in a row did players pass
-      #
-      # Returns a Fixnum
-      def successive_pass_count
-        @successive_pass_count ||= 0
+      def increment_successive_pass_count
+        @successive_pass_count += 1
+      end
+
+      def reset_successive_pass_count
+        @successive_pass_count = 0
       end
 
   end
