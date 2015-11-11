@@ -1,3 +1,9 @@
+require 'scrabble/board'
+require 'scrabble/configuration'
+require 'scrabble/player'
+require 'scrabble/rule'
+require 'scrabble/tile'
+
 module Scrabble
   class Game
 

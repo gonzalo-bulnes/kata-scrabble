@@ -28,7 +28,6 @@ module Scrabble
     describe '#players', private: true do
 
       it 'returns an array of players' do
-        pending
         expect(game.send(:players)).to be_kind_of Array
         expect(game.send(:players)).not_to be_empty
         expect(game.send(:players)[0]).to be_kind_of Player
@@ -38,7 +37,6 @@ module Scrabble
     describe '#current_player', private: true do
 
       it 'returns the current_player' do
-        pending
         expect(game.send(:current_player)).to be_kind_of Player
       end
     end
@@ -46,7 +44,6 @@ module Scrabble
     describe '#rules', private: true do
 
       it 'returns an array of rules' do
-        pending
         expect(game.send(:rules)).to be_kind_of Array
         expect(game.send(:rules)).not_to be_empty
         expect(game.send(:rules)[0]).to be_kind_of Rule
