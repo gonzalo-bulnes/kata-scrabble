@@ -9,11 +9,8 @@ module Scrabble
     let(:game) { Game.new(error, input, out) }
 
     it { expect(game).to respond_to :run }
-    it { expect(game).to respond_to :pass }
-    it { expect(game).to respond_to :pick_tile }
-    it { expect(game).to respond_to :place }
-    it { expect(game).to respond_to :successive_pass_count }
-    it { expect(game).to respond_to :swap_tile }
+
+    it_behaves_like 'an interactive Scrabble game'
 
     describe '#run' do
 
